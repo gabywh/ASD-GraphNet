@@ -25,6 +25,11 @@ Scientific article: see the published paper on [Computers in Biology and Medicin
 
 ## Environment setup
 - Python >= 3.10 recommended
+  - For some Python installations you may also need to install the package `python-venv` in addition to standard Python. For example, a Linux Mint (a Ubuntu / Debian - derivative) installation requires:
+  ```bash
+   sudo apt install python3.NN-venv 
+  ```
+  (where NN is your Python version)
 - Install dependencies:
   ```bash
   python -m venv .venv
