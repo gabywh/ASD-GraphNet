@@ -30,6 +30,9 @@ Scientific article: see the published paper on [Computers in Biology and Medicin
    sudo apt install python3.NN-venv 
   ```
   (where NN is your Python version)
+  - Note that you may need to invoke Python with `python3` rather than `python`
+  - pip (pip3) may also need installing at this point, Debian and derivatives as example `sudo apt install python3-pip`. Similar to invoking Python you may need to call `pip3` rather than `pip`
+
 - Install dependencies:
   ```bash
   python -m venv .venv
