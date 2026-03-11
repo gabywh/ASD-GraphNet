@@ -24,6 +24,11 @@ Scientific article: see the published paper on [Computers in Biology and Medicin
 - `requirements.txt`: Python dependencies
 
 ## Environment setup
+
+### Hardware
+All experiments were conducted on a Linux server running Ubuntu OS, equipped with an AMD Ryzen 9 5900HX processor (3.30 GHz), 39 GB of RAM, and an NVIDIA GeForce RTX 3060 GPU with 3840 CUDA cores and 6GB of GPU memory. We utilized libraries such as CUDA, PyTorch, scikit-learn, XGBoost, and LightGBM for our experiments.
+
+### Software
 - Python >= 3.10 recommended
   - For some Python installations you may also need to install the package `python-venv` in addition to standard Python. For example, a Linux Mint (a Ubuntu / Debian - derivative) installation requires:
   ```bash
