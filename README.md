@@ -44,23 +44,9 @@ Scientific article: see the published paper on [Computers in Biology and Medicin
 ## Data acquisition (ABIDE I)
 This repository expects [ABIDE I](https://fcon_1000.projects.nitrc.org/indi/abide/abide_I.html) ROI time-series files for atlases CC200, AAL, and Dosenbach 160. You will need the ABIDE I phenotype CSV and will download ROI time-series from the public S3.
 
-1) The Nifty format data files (nii) were last downloaded in a gzip compressed format December 2025 and have the following sha256 checksums:
-```bash
-40b1edfa68bccf06f608661b79655726f59485498b665bd9bac7f86394d6b9c2 aal_roi_atlas.nii.gz
-9467afce23ad7197fbbc8c96aadc8c0c2e36d4938445e3c1570a5deac489c650 cc200_roi_atlas.nii.gz
-c0bbd454a178006b42e725e0400705de64f752e9e82a0539ef5bfe10ae946020 dos160_roi_atlas.nii.gz
-```
+1) Obtain the phenotype file `pheno_file.csv` from NITRC (ABIDE I) and place it at the repository root.
 
-2) For convenience the file `nii_256checksums.txt` is provided and can be used to verify the content of the binary files e.g at a Linux command pronpt type : `$ sha256sum -c nii_256checksums.txt`. If you have the exact same version of data files used in this project you should see the following output:
-```bash
-aal_roi_atlas.nii.gz: OK
-cc200_roi_atlas.nii.gz: OK
-dos160_roi_atlas.nii.gz: OK
-```
-
-3) Obtain the phenotype file `pheno_file.csv` from NITRC (ABIDE I) and place it at the repository root.
-
-4) Use the helper downloader to fetch time-series into your chosen output folders (folders will be created if missing):
+2) Use the helper downloader (`download.py`) to fetch the ROI time-series datasets into your chosen output folders (folders will be created if missing):
 ```bash
 python download.py pheno_file.csv atlases/dos160 --roi rois_dosenbach160
 python download.py pheno_file.csv atlases/aal    --roi rois_aal
@@ -69,6 +55,20 @@ python download.py pheno_file.csv atlases/cc200  --roi rois_cc200
 Notes:
 - Default pipeline is `cpac` and filter is `filt_global` (see `download.py` for options)
 - Ensure stable network connection; the downloader skips missing files and continues
+
+3) The Nifty format data files (nii) were last downloaded in a gzip compressed format December 2025 and have the following sha256 checksums:
+```bash
+40b1edfa68bccf06f608661b79655726f59485498b665bd9bac7f86394d6b9c2 aal_roi_atlas.nii.gz
+9467afce23ad7197fbbc8c96aadc8c0c2e36d4938445e3c1570a5deac489c650 cc200_roi_atlas.nii.gz
+c0bbd454a178006b42e725e0400705de64f752e9e82a0539ef5bfe10ae946020 dos160_roi_atlas.nii.gz
+```
+
+4) For convenience the file `nii_256checksums.txt` is provided and can be used to verify the content of the binary files e.g at a Linux command pronpt type : `$ sha256sum -c nii_256checksums.txt`. If you have the exact same version of data files used in this project you should see the following output:
+```bash
+aal_roi_atlas.nii.gz: OK
+cc200_roi_atlas.nii.gz: OK
+dos160_roi_atlas.nii.gz: OK
+```
 
 ## Quickstart (feature extraction via notebooks)
 Launch Jupyter and run the notebooks in order:
